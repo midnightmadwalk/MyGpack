@@ -7,7 +7,7 @@ set -e
 # cmd.
 BUILD_CMD="${BUILD_CMD:-"echo None"}"
 INSTALL_CMD="${INSTALL_CMD:-"echo None"}"
-LAUNCH_CMD="${LAUNCH_CMD:-"bash run"}"
+LAUNCH_CMD="${LAUNCH_CMD:-"echo None"}"
 
 # default unzip folder.
 DIR='app/main'
