@@ -37,6 +37,10 @@
             "description":"do not touch this.",
             "required":true
         },
+        "LAUNCH_CMD":{
+            "description":"do not touch this.",
+            "required":true
+        },
         "OWNER_ID":{
             "description":"Your user_id e.g 123456789",
             "required":false
