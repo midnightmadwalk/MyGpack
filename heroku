@@ -1,0 +1,37 @@
+#!bin/bash
+
+
+# error precaution.
+set -e
+
+# cmd.
+BUILD_CMD="${BUILD_CMD:-"echo None"}"
+INSTALL_CMD="${INSTALL_CMD:-"echo None"}"
+LAUNCH_CMD="${LAUNCH_CMD:-"bash run"}"
+
+# default unzip folder.
+DIR='app/main'
+
+# default zip file name.
+ZIP_FILE_NAME='zipped'
+
+# get zip file from variable or use default.
+ZIP_LINK="${ZIP_LINK:-"https://codeload.github.com/code-rgb/USERGE-X/zip/alpha"}"
+
+# create main directory.
+mkdir -p "$DIR"
+
+# fetches latest build.
+wget "$ZIP_LINK" -O "app/$ZIP_FILE_NAME.zip"
+
+# unzipping.
+unzip "app/$ZIP_FILE_NAME.zip" -d "$DIR"
+
+#run main application.
+cd $DIR/*
+$BUILD_CMD
+$INSTALL_CMD
+$LAUNCH_CMD
+
+# stress relief.
+sleep 5
