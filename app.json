@@ -33,7 +33,7 @@
             "description":"Get this from https://t.me/botfather and enable Inline Mode",
             "required":false
         },
-        "UPSTREAM_REPO"{
+        "UPSTREAM_REPO":{
             "description":"Get this from https://t.me/botfather and enable Inline Mode",
             "required":false
         },
