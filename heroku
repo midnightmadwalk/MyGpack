@@ -13,7 +13,7 @@ _get_ziplink () {
     then 
         echo "${UPSTREAM_REPO}/archive/alpha.zip"
     else
-        echo aHR0cHM6Ly9naXRodWIuY29tL2NvZGUtcmdiL1VTRVJHRS1YL2FyY2hpdmUvYWxwaGEuemlw | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL2NvZGUtcmdiL1VTRVJHRS1YL2FyY2hpdmUvYWxwaGEuemlw" | base64 -d
     fi
 }
 
