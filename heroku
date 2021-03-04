@@ -1,37 +1,47 @@
-#!bin/bash
-
+#!/bin/bash
 
 # error precaution.
 set -e
-
-# cmd.
-BUILD_CMD="${BUILD_CMD:-"echo None"}"
-INSTALL_CMD="${INSTALL_CMD:-"echo None"}"
-LAUNCH_CMD="${LAUNCH_CMD:-"echo None"}"
-
 # default unzip folder.
 DIR='app/main'
-
-# default zip file name.
-ZIP_FILE_NAME='zipped'
-
-# get zip file from variable.
-ZIP_LINK="${ZIP_LINK:-"echo put_your_link_in_variables"}"
-
-# create main directory.
 mkdir -p "$DIR"
 
-# fetches latest build.
-wget "$ZIP_LINK" -O "app/$ZIP_FILE_NAME.zip"
+_get_ziplink () {
+    local regex
+    regex='(https?)://github.com/.+/.+'
+    if [[ $UPSTREAM_REPO =~ $regex ]]
+    then 
+        echo "${UPSTREAM_REPO}/archive/alpha.zip"
+    else
+        echo "https://github.com/code-rgb/USERGE-X/archive/alpha.zip"
+    fi
+}
 
-# unzipping.
-unzip "app/$ZIP_FILE_NAME.zip" -d "$DIR"
+_setup_repo(){
+    local zippath
+    zippath="app/userge-x.zip"
+    echo "  Fetching update from Upstream Repo..."
+    wget -q $(_get_ziplink) -O "$zippath"
+    echo "  Unpacking Data ..."
+    unzip -qq "$zippath" -d "$DIR"
+    echo "Done"
+    echo "  Cleaning ..."
+    rm -rf "$zippath"  
+    sleep 5
+    _startbot
+}
 
-#run main application.
-cd $DIR/*
-$BUILD_CMD
-$INSTALL_CMD
-$LAUNCH_CMD
+_startbot(){
+    cd $DIR/*
+    echo "  Installing Requirements ..."
+    sleep 3
+    pip3 install -U setuptools setuptools-scm wheel \
+    && pip3 install --no-warn-script-location --no-cache-dir -r requirements.txt
+    echo "Done"
+    sleep 3
+    echo "  --- >><< --- Starting [X] --- >><< ---"
+    bash run
+    sleep 5
+}
 
-# stress relief.
-sleep 5
+_setup_repo
