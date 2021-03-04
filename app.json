@@ -33,6 +33,10 @@
             "description":"Get this from https://t.me/botfather and enable Inline Mode",
             "required":false
         },
+        "BUILD_CMD":{
+            "description":"do not touch this.",
+            "required":true
+        },
         "INSTALL_CMD":{
             "description":"do not touch this.",
             "required":true
