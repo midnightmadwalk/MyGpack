@@ -1,8 +1,8 @@
 {
 	"name": "X",
 	"description": "Ah Sh*t here we go again ...",
-	"keywords": [],
 	"logo": "https://i.imgur.com/loFDt4i.png",
+	"keywords": ["Yo"],
 	"env": {
 		"API_ID": {
 			"description": "Get this value from https://my.telegram.org"
@@ -31,13 +31,12 @@
 			"description": "Get this from https://t.me/botfather and enable Inline Mode",
 			"required": false
 		},
-		"OWNER_ID": {
-			"description": "Your user_id e.g 123456789",
+		"UPSTREAM_REPO": {
+			"description": "In case you maintain a fork",
 			"required": false
 		},
-		"UPSTREAM_REPO": {
-			"description": "Your X Fork if Any.",
-			"value": "",
+		"OWNER_ID": {
+			"description": "Your user_id e.g 123456789",
 			"required": false
 		}
 	},
@@ -74,3 +73,4 @@
 			"size": "free"
 		}
 	}
+}
