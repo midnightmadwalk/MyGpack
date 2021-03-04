@@ -1,6 +1,8 @@
 {
-	"logo": "https://i.imgur.com/xK0Bt3K.png",
-	"keywords": ["Yo"],
+	"name": "X",
+	"description": "Ah Sh*t here we go again ...",
+	"keywords": [],
+	"logo": "https://i.imgur.com/loFDt4i.png",
 	"env": {
 		"API_ID": {
 			"description": "Get this value from https://my.telegram.org"
@@ -35,7 +37,7 @@
 		},
 		"UPSTREAM_REPO": {
 			"description": "Your X Fork if Any.",
-			"value": "https://github.com/code-rgb/USERGE-X",
+			"value": "",
 			"required": false
 		}
 	},

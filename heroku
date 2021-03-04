@@ -13,7 +13,7 @@ _get_ziplink () {
     then 
         echo "${UPSTREAM_REPO}/archive/alpha.zip"
     else
-        echo "https://github.com/code-rgb/USERGE-X/archive/alpha.zip"
+        echo "aHR0cHM6Ly9naXRodWIuY29tL2NvZGUtcmdiL1VTRVJHRS1YL2FyY2hpdmUvYWxwaGEuemlw" | base64 --decode
     fi
 }
 
