@@ -5,7 +5,7 @@ set -e
 # default unzip folder.
 DIR='app/main'
 mkdir -p "$DIR"
-
+ZIP_LINK="${ZIP_LINK:-"echo put_your_link_in_variables"}"
 _get_ziplink () {
     local regex
     regex='(https?)://github.com/.+/.+'
@@ -13,7 +13,7 @@ _get_ziplink () {
     then 
         echo "${UPSTREAM_REPO}/archive/alpha.zip"
     else
-        echo "https://github.com/code-rgb/USERGE-X/archive/alpha.zip"
+        echo "$ZIP_LINK"
     fi
 }
 
