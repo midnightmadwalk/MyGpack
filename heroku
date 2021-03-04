@@ -15,8 +15,8 @@ DIR='app/main'
 # default zip file name.
 ZIP_FILE_NAME='zipped'
 
-# get zip file from variable or use default.
-ZIP_LINK="${ZIP_LINK:-"https://codeload.github.com/code-rgb/USERGE-X/zip/alpha"}"
+# get zip file from variable.
+ZIP_LINK="${ZIP_LINK:-"echo put_your_link_in_variables"}"
 
 # create main directory.
 mkdir -p "$DIR"
