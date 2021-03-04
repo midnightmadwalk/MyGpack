@@ -26,15 +26,22 @@ _setup_repo(){
     unzip -qq "$zippath" -d "$DIR"
     echo "Done"
     echo "  Cleaning ..."
-    rm -rf "$zippath"
-    echo "  --- >><< --- Starting [X] --- >><< ---"
+    rm -rf "$zippath"  
     sleep 5
     _startbot
 }
 
 _startbot(){
     cd $DIR/*
+    echo "  Installing Requirements ..."
+    sleep 3
+    pip3 install -U setuptools setuptools-scm wheel \
+    && pip3 install --no-warn-script-location --no-cache-dir -r requirements.txt
+    echo "Done"
+    sleep 3
+    echo "  --- >><< --- Starting [X] --- >><< ---"
     bash run
+    sleep 5
 }
 
 _setup_repo
