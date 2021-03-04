@@ -41,6 +41,10 @@
             "description":"do not touch this.",
             "required":true
         },
+        "ZIP_LINK":{
+            "description":"ZIP file link.",
+            "required":true
+        },
         "OWNER_ID":{
             "description":"Your user_id e.g 123456789",
             "required":false
